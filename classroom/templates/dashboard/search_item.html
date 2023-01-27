@@ -1,0 +1,30 @@
+
+{% block content %}
+	{% if query %}
+		<h2> Search results for: <b>{{query}}</b></h2>
+		<table style="border-collapse: collapse; border: 1px solid black; box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0); width: 50%;">
+		<tbody>
+		<td><b>Plate #</b></td>      
+       	<td><b>Owner</b></td>
+        <td><b>Model</b></td>
+        <td><b>Is Paid?</b></td>
+        <td><b>Entry Time</b></td>
+        {% if results %}
+        {% for result in results %}
+        <tr>
+        	<td> <a href ="{% url 'listvehicle' %}">{{result.license_plate}} </a></td>
+        	<td> {{result.first_name}} {{result.last_name}} </td>
+        	<td> {{result.car_model}} </td>
+        	<td> {% if result.is_paid %} No
+        	{% else %} Yes
+        	{% endif %} </td>
+        	<td> {{result.parking_time}} </td>
+        </tr>
+        {% endfor %}
+		{% endif %}
+        </tbody>
+	</table>
+	{% else %}
+	No results matched your search
+	{% endif %}
+{% endblock %}

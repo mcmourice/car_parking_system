@@ -1,0 +1,50 @@
+{% load widget_tweaks %}
+
+<div class="modal-header">
+  <h3 class="modal-title text-primary">Customer Details</h3>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <div class="">
+   <strong> First Name: </strong>
+    {{ customer.first_name }}
+  </div>
+  <div class="">
+   <strong> Defects: </strong>
+    {{ customer.comment }}
+  </div>
+  <div class="">
+   <strong> License Plate: </strong>
+    {{ customer.license_plate }}
+  </div>
+    <div class="">
+    <strong> Parking Space #: </strong>
+    {{ customer.parking_space }}
+  </div>
+  <div class="">
+    <strong> Entry Time: </strong>
+    {{ customer.parking_time }}
+  </div>
+  <div class="">
+   <strong> Exit Time: </strong>
+    {{ customer.exit_time }}
+  </div>
+  <div class="">
+    <strong> Hours Spent: </strong>
+    {{ customer.hours_spent }}
+  </div>
+  <div class="">
+    <strong> Total Cost: </strong>
+    {{ customer.total_cost }}
+  </div>
+  
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+</div>

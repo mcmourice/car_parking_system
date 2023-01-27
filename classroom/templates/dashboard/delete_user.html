@@ -1,0 +1,22 @@
+{% load widget_tweaks %}
+
+<form method="post" action="">
+  {% csrf_token %}
+
+  <div class="modal-header">
+    <h3 class="modal-title text-primary">Delete User Details</h3>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <p class="delete-text">You will permanently delete 
+      <strong>{{ user.first_name }}&nbsp;{{ user.last_name }}</strong>'s details!</p>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" id="delete-btn" class="btn btn-success">Delete</button>
+  </div>
+
+</form>

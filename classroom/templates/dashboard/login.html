@@ -1,0 +1,38 @@
+{% load static %}
+<title>GCM Parking Management System</title>
+<video loop muted autoplay playsinline class="video">
+<source src="{% static 'classroom/css/home/css/parking.mp4' %}" type="video/mp4" />
+</video>
+<link href="{% static 'classroom/css/home/css/index.css' %}" rel="stylesheet">
+
+<div class="box" style = "position: absolute; top: 50% ">
+<h2 style="font-size: 40px;"> Garden City Mall Car Parking System</h2>
+
+  <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+    <div class="inputBox">
+      Username
+      <input type="text" name="username" required onkeyup="this.setAttribute('value', this.value);" value="">
+      
+    </div>
+    <div class="inputBox">
+      Password
+      <input type="password" name="password" required onkeyup="this.setAttribute('value', this.value);" value="">
+      
+    </div>
+    <input type="submit" name="sign-in" value="Sign In"> <br>
+    <br><a href="{%url 'reset_password' %}"> Forgot Password?</a>
+  </form>
+   <br>
+    <div class="form-group">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <div class="alert alert-success" style="color:red;"> {{ message }}</div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+</div>
